@@ -1,0 +1,14 @@
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/install/local.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/install.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/list_install_components.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/rebuild_cache.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/edit_cache.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/install/strip.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/CMakeFiles/flutter_application_1.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/install/strip.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/install/local.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/install.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/list_install_components.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/rebuild_cache.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/edit_cache.dir
+/home/laptop/GitHub/flutter-todo/build/linux/x64/debug/flutter/CMakeFiles/flutter_assemble.dir
