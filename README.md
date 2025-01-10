@@ -1,3 +1,3 @@
-# flutter_application_1
+# Flutter ToDo App
 
 A new Flutter project.
