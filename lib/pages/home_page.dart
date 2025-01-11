@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/todo_list.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -37,12 +37,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple.shade300,
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
         title: const Text(
-          'Simple Todo',
+          'Todo List',
         ),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.grey[850],
         foregroundColor: Colors.white,
       ),
       body: ListView.builder(
@@ -64,10 +64,16 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: TextField(
                   controller: _controller,
+                  cursorColor: Colors.white70,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
                   decoration: InputDecoration(
                     hintText: 'Add something',
+                    hintStyle: const TextStyle(color: Colors.white70),
+                    focusColor: Colors.white,
                     filled: true,
-                    fillColor: Colors.deepPurple.shade200,
+                    fillColor: Colors.grey[600],
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(15.0),
@@ -82,6 +88,8 @@ class _HomePageState extends State<HomePage> {
             ),
             FloatingActionButton(
               onPressed: safeNewTask,
+              backgroundColor: Colors.blue[600],
+              foregroundColor: Colors.white,
               child: const Icon(Icons.add),
             ),
           ],
