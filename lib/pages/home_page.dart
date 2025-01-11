@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
   List toDoList = [
-    ['Buy milk', false],
-    ['Buy eggs', false],
+    ['do good', false],
+    ['drink coffee', false],
   ];
 
   void checkBoxChanged(int index) {

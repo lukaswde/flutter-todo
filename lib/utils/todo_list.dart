@@ -32,6 +32,7 @@ class TodoList extends StatelessWidget {
               onPressed: deleteFunction,
               icon: Icons.delete,
               backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
               borderRadius: BorderRadius.circular(15),
             ),
           ],
