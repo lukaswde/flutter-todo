@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/todo_list.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,15 +12,34 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
-  List toDoList = [
-    ['do good', false],
-    ['drink coffee', false],
-  ];
+  List toDoList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _loadToDoList();
+  }
+
+  Future<void> _loadToDoList() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      DocumentSnapshot snapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .get();
+      if (snapshot.exists) {
+        setState(() {
+          toDoList = List.from(snapshot['toDoList']);
+        });
+      }
+    }
+  }
 
   void checkBoxChanged(int index) {
     setState(() {
       toDoList[index][1] = !toDoList[index][1];
     });
+    _saveToDoList();
   }
 
   void safeNewTask() {
@@ -26,12 +47,24 @@ class _HomePageState extends State<HomePage> {
       toDoList.add([_controller.text, false]);
       _controller.clear();
     });
+    _saveToDoList();
+  }
+
+  Future<void> _saveToDoList() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .set({'toDoList': toDoList});
+    }
   }
 
   void deleteTask(int index) {
     setState(() {
       toDoList.removeAt(index);
     });
+    _saveToDoList();
   }
 
   @override
